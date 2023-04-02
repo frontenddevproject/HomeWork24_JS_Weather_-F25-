@@ -2,6 +2,8 @@ const cityInput = document.querySelector("#city");
 const submitButton = document.querySelector("#submit");
 const weatherDataSection = document.querySelector("#weather-data");
 const loadingSection = document.querySelector("#loading");
+
+const previousViews = [];
 const requestOptions = {
 	method: 'GET',
 
@@ -20,7 +22,8 @@ renderLoading(isLoading);
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`, requestOptions)
     .then(response => response.json())
     .then(response => {
-        console.log(response, "response");
+        previousViews.push(response);
+        console.log(previousViews, "Views");
         if (errorStatuses.includes(response.cod)) {
             return renderError(response);      
         }
@@ -32,6 +35,7 @@ renderLoading(isLoading);
     .finally(() => {
         isLoading = false;
         renderLoading(isLoading);
+
     })
 }
 
