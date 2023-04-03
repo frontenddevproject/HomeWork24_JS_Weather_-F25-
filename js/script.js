@@ -10,7 +10,7 @@ const requestOptions = {
 	}
 ;
 const API_KEY = `d377c466fe39a6b0ed561500b8e14430`;
- const errorStatuses = ["404", 401, "400"];
+const errorStatuses = ["404", 401, "400"];
 let isLoading = false;
 
  const lastRequestedCity = localStorage.getItem("city");
@@ -56,7 +56,7 @@ function renderLoading () {
 }
 function renderWeather (data) {
     const {main, wind, sys, name} = data;
-    const{feels_like, temp, temp_min, temp_max, pressure} = main;
+    const{feels_like, temp, pressure} = main;
     const {speed, deg, gust} = wind;
     const {country} = sys;
 
@@ -68,12 +68,10 @@ function renderWeather (data) {
     <span>Feels like: ${feels_like} <sup>o</sup>C</span>
     <p>Pressure: ${pressure}</p>
     <h3>Wind</h3>
-    <span>Feels like: ${speed} </span>
+    <p><span>Feels like: ${speed} </span>
     <span>Direction: ${deg}</span>
-    <span>Gust: ${gust}</span>
+    <span>Gust: ${gust}</span></p>
     `;
 }
 
-const time = new Date(1680492648);
-console.log(time.getHours())
 
