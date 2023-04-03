@@ -5,7 +5,7 @@ body{
 }
 
 .content-block{
-   width: 40vw;
+   width: 30vw;
    min-width: 320px;
    margin: 30px auto;
    padding: 15px;
@@ -20,6 +20,15 @@ body{
 input{
    font-size: 20px;
    margin: 5px; 
-   width:25vw;
+   width:15vw;
    min-width: 200px;
+}
+
+/* #weather-data{
+   display: flex;
+   flex-direction: column;
+} */
+h1, h2, h3{
+   margin:0;
+   padding: 0;
 }

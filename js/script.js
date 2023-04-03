@@ -9,7 +9,7 @@ const requestOptions = {
 
 	}
 ;
-const API_KEY = `6409ee75b6ffc020adb31a565296a4bb`;
+const API_KEY = `d377c466fe39a6b0ed561500b8e14430`;
  const errorStatuses = ["404", 401, "400"];
 let isLoading = false;
 
@@ -66,8 +66,7 @@ function renderWeather (data) {
     <h2>Weather in ${name}, ${country}</h2>
     <p>Temp: ${temp} <sup>o</sup>C</p>
     <span>Feels like: ${feels_like} <sup>o</sup>C</span>
-    <span>${temp_min}<sup>o</sup>C - ${temp_max} <sup>o</sup>C</span>
-    <span>Pressure: ${pressure}</span>
+    <p>Pressure: ${pressure}</p>
     <h3>Wind</h3>
     <span>Feels like: ${speed} </span>
     <span>Direction: ${deg}</span>
@@ -75,4 +74,6 @@ function renderWeather (data) {
     `;
 }
 
+const time = new Date(1680492648);
+console.log(time.getHours())
 
