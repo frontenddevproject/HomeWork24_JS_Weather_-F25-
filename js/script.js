@@ -64,13 +64,14 @@ function renderWeather (data) {
 
     weatherDataSection.innerHTML = `
     <h2>Weather in ${name}, ${country}</h2>
+    <h3>Temperature</h3>
     <p>Temp: ${temp} <sup>o</sup>C</p>
     <span>Feels like: ${feels_like} <sup>o</sup>C</span>
-    <p>Pressure: ${pressure}</p>
+    <p>Pressure: ${pressure} hPa</p>
     <h3>Wind</h3>
-    <p><span>Feels like: ${speed} </span>
-    <span>Direction: ${deg}</span>
-    <span>Gust: ${gust}</span></p>
+    <p>Speed: ${speed} m/s </p>
+    <p>Direction: ${deg}<sup>o</sup></p>
+    <p>Gust: ${gust} m/s</span></p>
     `;
 }
 
